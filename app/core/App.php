@@ -9,9 +9,11 @@ class App {
         $url = $this->parseURL();
 
         // set controller
-        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
-            $this->controller = ucfirst($url[0]);
-            unset($url[0]);
+        if (isset($url[0])) {
+            if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+                $this->controller = ucfirst($url[0]);
+                unset($url[0]);
+            }
         }
 
         // set method
