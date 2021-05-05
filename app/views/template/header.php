@@ -18,8 +18,8 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>">Home</a>
                     <a class="nav-link" href="<?= BASEURL; ?>/about">About</a>
-                    <!-- <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                    <a class="nav-link" href="<?= BASEURL; ?>/student">Students</a>
+                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
                 </div>
             </div>
         </div>
