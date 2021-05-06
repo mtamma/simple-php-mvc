@@ -12,9 +12,10 @@
             <h3>Student List</h3>
             <?php foreach ($data['students'] as $student) : ?>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item">
                         <?= $student['name']; ?>
-                        <a href="<?= BASEURL; ?>/student/detail/<?= $student['id']; ?>" class="badge bg-primary">detail</a>
+                        <a href="<?= BASEURL; ?>/student/delete/<?= $student['id']; ?>" class="badge bg-danger float-end me-1" onclick="return confirm('are you sure?');">delete</a>
+                        <a href="<?= BASEURL; ?>/student/detail/<?= $student['id']; ?>" class="badge bg-primary float-end me-1">detail</a>
                     </li>
                 </ul>
             <?php endforeach; ?>
