@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalForm">
+            <button type="button" class="btn btn-primary mb-3 showAddModal" data-bs-toggle="modal" data-bs-target="#modalForm">
                 Add Student Data
             </button>
             <h3>Student List</h3>
@@ -15,6 +15,7 @@
                     <li class="list-group-item">
                         <?= $student['name']; ?>
                         <a href="<?= BASEURL; ?>/student/delete/<?= $student['id']; ?>" class="badge bg-danger float-end me-1" onclick="return confirm('are you sure?');">delete</a>
+                        <a href="<?= BASEURL; ?>/student/edit/<?= $student['id']; ?>" class="badge bg-success float-end me-1 showEditModal" data-bs-toggle="modal" data-bs-target="#modalForm" data-id="<?= $student['id']; ?>">edit</a>
                         <a href="<?= BASEURL; ?>/student/detail/<?= $student['id']; ?>" class="badge bg-primary float-end me-1">detail</a>
                     </li>
                 </ul>
@@ -22,6 +23,8 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
 <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalForm" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -30,6 +33,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="<?= BASEURL; ?>/student/add" method="post">
+                <input type="hidden" name="id" id="id">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>

@@ -40,4 +40,17 @@ class Student_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function editStudentData ($data) {
+        $query = "UPDATE " . $this->table . " SET name=:name, email=:email, address=:address WHERE id =:id";
+
+        $this->db->query($query);
+        $this->db->bind('name', $data['name']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('address', $data['address']);
+        $this->db->bind('id', $data['id']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }
