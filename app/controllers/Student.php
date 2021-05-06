@@ -22,4 +22,11 @@ class Student extends Controller
         $this->view('template/footer');
     }
 
+    public function add () {
+        if ($this->model('Student_model')->addStudentData($_POST) > 0) {
+            header('Location: ' . BASEURL . '/student');
+            exit;
+        }
+    }
+
 }
