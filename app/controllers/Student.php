@@ -64,4 +64,14 @@ class Student extends Controller
         header('Location: ' . BASEURL . '/student');
     }
 
+    public function search () {
+        $data = array(
+            'title' => 'List Student',
+            'students' => $this->model('Student_model')->searchStudent()
+        );
+        $this->view('template/header', $data);
+        $this->view('student/index', $data);
+        $this->view('template/footer');
+    }
+
 }

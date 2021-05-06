@@ -4,11 +4,25 @@
             <?php Flasher::flash();  ?>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary mb-3 showAddModal" data-bs-toggle="modal" data-bs-target="#modalForm">
+            <button type="button" class="btn btn-primary showAddModal" data-bs-toggle="modal" data-bs-target="#modalForm">
                 Add Student Data
             </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/student/search" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="seach student..." name="keyword" id="keyword" autocomplete="off">
+                    <button class="btn btn-primary" type="submit" id="buttonSearch">Button</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <h3>Student List</h3>
             <?php foreach ($data['students'] as $student) : ?>
                 <ul class="list-group">

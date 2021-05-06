@@ -53,4 +53,13 @@ class Student_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function searchStudent () {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM " . $this->table . " WHERE name like :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+
+        return $this->db->resultSet();
+    }
 }
